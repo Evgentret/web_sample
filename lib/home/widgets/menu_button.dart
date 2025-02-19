@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+///Simple button for bottom-right menu
+///
 Widget menuButton({required String text, required VoidCallback onPressed}) {
   return SizedBox(
     width: 150,
