@@ -7,6 +7,10 @@ import 'dart:js_interop';
 
 
 ///Util to manipulate full screen modes using JS
+///
+/// This method can't exit fullscreen mode if it was enabled
+/// using F11 key - JavaScript limitation
+
 
 //methods for enabling full screen in different browsers
 
@@ -54,13 +58,19 @@ external void webkitCancelFullScreen();
 @JS('document.webkitCancelFullScreen')
 external JSFunction? webkitCancelFullScreenClosure;
 
+@JS('document.webkitExitFullscreen')
+external void webkitExitFullscreen();
+
+@JS('document.webkitExitFullscreen')
+external JSFunction? webkitExitFullScreenClosure;
+
 @JS('document.msExitFullscreen')
 external void msExitFullscreen();
 
-//methods for querying full screen state
-
 @JS('document.msExitFullscreen')
 external JSFunction? msExitFullscreenClosure;
+
+//methods for querying full screen state
 
 @JS('document.fullscreenElement')
 external JSAny? fullscreenElement;
@@ -97,20 +107,25 @@ class FullScreen {
           msRequestFullscreen();
         }
       } else {
+
         if (exitFullscreenClosure != null) {
           exitFullscreen();
         } else if (mozCancelFullScreenClosure != null) {
           mozCancelFullScreen();
         } else if (webkitCancelFullScreenClosure != null) {
           webkitCancelFullScreen();
+        } else if (webkitExitFullScreenClosure != null) {
+          webkitExitFullscreen();
         } else if (msExitFullscreenClosure != null) {
           msExitFullscreen();
         }
+
       }
     } catch (e) {
 
       return false;
     }
+
     return enable;
   }
 }
