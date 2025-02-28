@@ -8,7 +8,7 @@ import 'dart:js_interop';
 
 ///Util to manipulate full screen modes using JS
 ///
-/// This method can't exit fullscreen mode if it was enabled
+/// It can't exit fullscreen mode if it was enabled
 /// using F11 key - JavaScript limitation
 
 
