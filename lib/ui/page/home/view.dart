@@ -6,7 +6,6 @@ import 'controller.dart';
 /// View of the Home page.
 ///
 /// Displaying image from user input URL using HTML <img> tag with full screen possibility.
-
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 

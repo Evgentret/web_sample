@@ -7,8 +7,8 @@ import '../../../util/web/fullscreen.dart';
 /// Controller for managing states of home screen view.
 ///
 /// It involves refreshing the entire screen.
-
 class HomeController extends GetxController {
+
   /// Image URL that will be displayed.
   String? imageUrl;
 

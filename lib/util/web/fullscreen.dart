@@ -6,10 +6,10 @@
 import 'dart:js_interop';
 
 
-///Util to manipulate full screen modes using JS
+///Util to manipulate full screen modes using JS.
 ///
 /// It can't exit fullscreen mode if it was enabled
-/// using F11 key - JavaScript limitation
+/// using F11 key - JavaScript limitation.
 
 
 //methods for enabling full screen in different browsers
@@ -82,9 +82,9 @@ external JSAny? webkitFullscreenElement;
 external JSAny? msFullscreenElement;
 
 
-/// Helper for manipulating full screen mode in different platforms
+/// Helper for manipulating full screen mode in different platforms.
 ///
-/// currently support only web implementation
+/// Currently support only web implementation.
 class FullScreen {
   /// Indicates whether device's browser is in fullscreen mode or not.
   static bool get isFullscreen {
